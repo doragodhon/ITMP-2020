@@ -1,0 +1,45 @@
+body {
+      font-family: 'Mali', cursive;
+      background-color: lightyellow;
+      text-align: center;
+  }
+
+#main {
+	font-size : 25px;
+	font-weight: bold;
+}
+
+input{
+	height: 30px;
+	width : 100px;
+}
+
+h1{
+	font-size:50px;
+	text-shadow: 2px 2px lightgreen;
+}
+
+h2{
+	font-size:30px;
+	text-decoration: underline;
+}
+
+#box{
+	background-color: orange;
+	width:60%;
+	margin: auto;
+	padding-bottom: 15px;
+	box-shadow: 10px 10px #888888;
+	border-radius: 20px;
+}
+
+.table{
+	box-shadow: 5px 5px 5px black;
+	width:30%;
+	margin-left: 300px;
+	margin-top: 15px;
+	padding-bottom: 15px;
+	background-color: lightblue;
+}
+
+

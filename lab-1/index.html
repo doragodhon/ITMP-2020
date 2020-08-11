@@ -5,35 +5,53 @@
 	<link rel=stylesheet href="../src/reset.css">
 	<link rel=stylesheet href="lab.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
 </head>
 <body class="paper">
-	<div id="app">
-		<input type="number" v-model="num">
-		<div class="space"></div>
-		<h2>สูตรคูณแม่ {{num}} </h2>
-		<h3 v-for="i in 12"> {{num}} x {{i}} = {{multiply(i)}} </h3>
-		<h3>ผลรวมทั้งหมด (Sum) คือ  {{sum()}} </h3>
-	</div>
+	<div id="box">
+		<div id="calculator">
+			<h1>กรอกสูตรคูณ</h1>
+			<p id="main"> สูตรคูณแม่ <input type="number" v-model="number">
+			จำนวนแถว <input type="number" v-model="row"> </p>
+			<div class="space"></div>
+			<h2>สูตรคูณแม่ {{number}} </h2>
+			<h3>ผลรวมทั้งหมดคือ (Sum) คือ  {{sum(row)}} </h3>
+			<h4>แม่ก่อนหน้าที่ค้นหา --> แม่ {{number_before}}</h4>
+			<h3 class= "table" v-for="count in row_compute"> {{number}} x {{count}} = {{multiply(count)}} </h3>
+		</div>
 
-	<script>
-		let app = new Vue({
-			el:'#app',
-			data:{
-				num:2
-			},
-			methods: {
-				multiply: function(row){
-					return this.num*row
+		<script>
+			let calculator = new Vue({
+				el:'#calculator',
+				data:{
+					number:1,
+					row:7,
+					number_before:1
 				},
-				sum : function(){
-					let total = 0
-					for(let i = 1; i <= 12; i++){
-						total += this.num*i
+				methods: {
+					multiply: function(multiplier){
+						return this.number*multiplier
+					},
+					sum : function(row){
+						let total = 0
+						for(let loop_count = 1; loop_count <= row; loop_count++){
+							total += this.number*loop_count
+						}
+						return total
 					}
-					return total
+				},
+				computed: {
+					row_compute: function(){
+						return parseInt(this.row)
+					}
+				},
+				watch: {
+					number: function(a,b){
+						this.number_before = b 
+					}
 				}
-			}
-		});
-	</script>
+			});
+		</script>
+	</div>
 </body>
 </html>
