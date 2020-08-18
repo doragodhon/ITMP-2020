@@ -17,6 +17,8 @@
 
 		<button @click="isthisgood">เขาเป็นสมาชิกกลุ่มที่ดีหรือไม่ </button>
 		<h2>{{yesno.answer}}</h2>
+		<img :src="yesno.image" alt="">
+
 		Users
 		<h2 v-for="u in users" :data-id="u.id" @click="viewBio(u)">
 		<img :src="`https://picsum.photos/id/3${u.id}/200/300`">
