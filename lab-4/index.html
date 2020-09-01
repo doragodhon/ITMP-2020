@@ -67,6 +67,8 @@
 							this.row-=1
 							this.time-=2
 							this.pick=rand(1,this.row*this.row)
+							this.h=rand(0,360)
+							this.l=rand(40,60)
 						}
 					}
 				},
@@ -74,7 +76,7 @@
 					//เข้าด่านต่อไป
 					this.row+=1
 					this.pick=rand(1,this.row*this.row)
-					this.h=rand(0,255)
+					this.h=rand(0,360)
 					this.l=rand(40,60)
 					console.log('Correct')
 				}
