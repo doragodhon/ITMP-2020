@@ -126,17 +126,29 @@
 							this.fruits[f].run = false;
 						}
 					}
+					if(this.score >= 5 && this.score < 10){
+						app.speed = 800
+						//console.log(app.speed)
+					}else if(this.score >= 10 && this.score < 15){
+						app.speed = 700
+						//console.log(app.speed)
+					}else if(this.score >= 15 && this.score < 20){
+						app.speed = 600
+						//console.log(app.speed)
+					}else if(this.score >= 20){
+						app.speed = 500
+						//console.log(app.speed)
+					}
 				}
 			}
 		})
 
-		let playing = setInterval(function(){
-			if(app.play){
+		setTimeout(function timespeed(){
+			if (app.play) {
 				app.turn++
-			}else {
-				clearInterval(playing)
+				setTimeout(timespeed, app.speed)
 			}
-		},speed)
+		},app.speed)
 
 	</script>
 </body>
