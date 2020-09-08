@@ -101,8 +101,12 @@ div.box{
 	border: 3px solid #fffc;
 	transform: scale(.6);
 }
-.box._fruit[data-type="11"]{
+.box._fruit[data-type="12"]{
 	background-color: red;
+}
+
+.box._fruit[data-type="16"]{
+	background-color: yellow;
 }
 
 .box[data-pst="0"]{
